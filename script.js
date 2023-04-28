@@ -33,7 +33,7 @@ class Media {
   }
 
   toggleCheckedOutStatus() {
-    return this._isCheckedOut === false;
+    return (this._isCheckedOut = !this._isCheckedOut);
   }
 }
 
@@ -83,3 +83,18 @@ class CD extends Media {
     return this._songs;
   }
 }
+
+let aBook = new Book('book Title', 'Juni B', 350);
+console.log(aBook);
+aBook.toggleCheckedOutStatus();
+console.log(aBook);
+
+let aMovie = new Movie('movie Title', 'Jones India', 200);
+console.log(aMovie);
+aMovie.addRating(3);
+aMovie.addRating(2);
+console.log(aMovie.getAverageRating());
+console.log(aMovie.runtime);
+
+let aCD = new CD('CD Title', 'Maybe Wavy', 60);
+console.log(aCD);
